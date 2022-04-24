@@ -1,4 +1,4 @@
-pipeline {
+pipeline{
   agent {label 'linux'}
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
@@ -9,51 +9,18 @@ pipeline {
         echo "hello"
       }
     }
+  stages {
+    stage('cat Readme.md') {
+      when {
+        branch "fix-*"
+      }
+      steps {
+        sh '''
+        cat README.md
+        '''
+      }
+    }
   }
 }
-#testing~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
-~
+}
+
