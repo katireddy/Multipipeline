@@ -9,7 +9,6 @@ pipeline{
         echo "hello"
       }
     }
-  stages {
     stage('cat Readme.md') {
       when {
         branch "fix-*"
