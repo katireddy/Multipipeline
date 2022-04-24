@@ -3,13 +3,12 @@ pipeline{
   options {
     buildDiscarder(logRotator(numToKeepStr: '5'))
   }
-  stages {
+  stages{
     stage('Hello') {
       steps {
         echo "hello"
       }
     }
-  stages {
     stage('cat Readme.md') {
       when {
         branch "fix-*"
